@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+
+.list-title{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.form-error {
+    font-size: 0.8em;
+    color: red;
+}
+
+.pagination-info {
+    text-align: center;
+    margin-top: 10px;
+    color: #6c757d;
+    font-size: 12px;
+}
+  
+  
