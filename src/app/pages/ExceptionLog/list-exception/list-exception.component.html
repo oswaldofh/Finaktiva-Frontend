@@ -1,0 +1,65 @@
+<app-sidebar></app-sidebar>
+ <div class="p-4 sm:ml-64">
+    <div class="p-4 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+       
+      
+        @if (hasError) {
+            <h2>No se han podido cargar las Notas</h2>
+        } @else if (isLoading) {
+            <app-loader [textLoader]="textLoader"></app-loader>
+        } @else {
+            <h2 class="list-title">Listado de excepciones</h2>
+            
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                
+  
+                <table class="w-full text-sm text-center rtl:text-center text-gray-700 dark:text-gray-700">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                Id
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Nombre
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Descripción
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Fecha
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (evenLog of exceptionLogInterface; track evenLog.id) {
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{evenLog.id}}
+                                </th>
+                                <td class="px-6 py-4">
+                                    {{evenLog.name}}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{evenLog.description}}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{evenLog.date}}
+                                </td>
+                               
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div> 
+
+
+ 
+  
+
+
+
+

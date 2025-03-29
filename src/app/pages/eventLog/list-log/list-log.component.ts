@@ -26,7 +26,7 @@ export class ListLogComponent implements OnInit {
   filter: Filter | null = null;
 
   currentPage = 1;
-  pageSize = 3;
+  pageSize = 5;
 
   selectedType: number | null = null;
   startDate: string | null = null;
